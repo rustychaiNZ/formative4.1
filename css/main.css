@@ -1,0 +1,130 @@
+body{
+	min-height: 100vh;
+	padding: 0;
+}
+footer{
+	z-index: -1;
+}
+h2{
+	font-size: 2.6em;
+	font-weight: 500;
+}
+hr{
+	border-width: 2px;
+	border-color: #333333;
+}
+.card > p,h1,h2,h3,h4,h5{
+	color: black;
+}
+.card-body > p,h1,h2,h3,h4,h5{
+	color: black;
+}
+.btn{
+	width: fit-content;
+}
+
+.tagline{
+	font-size: 1.1em;
+}
+.jumbotron{
+	border-radius: 0;
+}
+
+/*Top Menu*/
+.top-bar{
+	background-color: #18393d;
+	box-shadow: 2px 2px 5px grey;
+	height: 50px;
+	padding: 0 45px;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+.top-bar ul, .top-bar li{
+	display: inline;	
+}
+.top-bar a{
+	color: white;
+	line-height: 50px;
+	padding: 10px;
+	text-decoration: none;
+}
+.top-bar a:hover{
+	background: rgba(132,228,82,1);
+	color: black;
+}
+.sub-menu a{
+	display: block;
+	line-height: 40px;
+	width: 250px;
+}
+.top-bar ul li{
+	position: relative;
+	float: left;
+}
+.top-bar .sub-menu{
+	background-color: #18393d;
+	box-shadow: 2px 2px 5px grey;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: -999999px;
+}
+.top-bar ul li:hover .sub-menu{
+	opacity: 1;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+}
+
+.top-bar .current-menu-item > a{
+	background: #a72a02;
+}
+/*End of top menu*/
+
+/*Footer Menu*/
+.bottom-list{
+	margin: 0;
+	padding: 0;
+}
+.bottom-list .menu{
+	list-style-type: none;
+	padding: 0;
+}
+.bottom-list .sub-menu{
+	list-style-type: none;
+	padding-left: 20px;
+}
+.bottom-list .menu-item{
+	display: block;
+	list-style: none;
+}
+.bottom-list .menu-item a{
+	color: #850514;
+	font-size: 1.2em;
+	text-decoration: underline;
+	width: auto;
+}
+.bottom-list .menu-item a:hover{
+	color: black;
+}
+/*End of footer menu*/
+
+/*Sidebar Menu*/
+.widget ul{
+	padding: 5px 0;
+}
+.widget li{
+	list-style-type: none;
+	padding-left: 15px;
+}
+/*Sidebar Menu end*/
+
+.gradient-head{
+	background: rgb(46,122,133);
+	background: linear-gradient(36deg, rgba(46,122,133,1) 23%, rgba(52,164,180,1) 76%, rgba(132,228,82,1) 100%);
+}
+.gradient-footer{
+	background: rgb(24,57,61);
+	background: linear-gradient(234deg, rgba(24,57,61,1) 23%, rgba(37,86,93,1) 67%, rgba(68,140,30,1) 100%);
+}
