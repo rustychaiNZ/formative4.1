@@ -6,8 +6,9 @@ footer{
 	z-index: -1;
 }
 h2{
-	font-size: 2.6em;
-	font-weight: 500;
+	font-size: 3.5em;
+	font-weight: 100;
+	text-align: center;
 }
 hr{
 	border-width: 2px;

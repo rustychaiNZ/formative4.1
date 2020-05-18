@@ -3,8 +3,7 @@
 
 <!-- Basic page layout for all future created pages -->
 <div class="container bg-light py-3">
-	<h2><?php single_cat_title(); ?></h2>
-	<hr>
+	<h2 class="py-2"><?php single_cat_title(); ?></h2>
 	<div class="row">
 		<?php get_template_part('includes/section','archive'); ?>
 	</div>
