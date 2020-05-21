@@ -7,9 +7,9 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class();?>>
-	<header class="mt-0 gradient-head d-flex align-items-center">
-		<div class="m-auto">
-			<h1 class="display-4 text-center"><?php bloginfo(); ?></h1>
+	<header class="mt-0">
+		<div class="jumbotron gradient-head mb-0">
+			<h1 class="display-2 text-center"><?php bloginfo(); ?></h1>
 			<p class="text-dark text-center tagline"><?php bloginfo( 'description' ); ?></p>
 		</div>
 	</header>

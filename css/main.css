@@ -78,9 +78,8 @@ hr{
 	top: 100%;
 }
 
-.current-menu-item{
-	/*background: #a72a02;*/
-	/*color: black !important;*/
+.current-menu-item a{
+	font-weight: 700;
 }
 /*End of top menu*/
 
