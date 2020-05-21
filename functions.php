@@ -76,3 +76,6 @@ add_action('widgets_init', 'my_sidebars');
 // ('nameOfImageSize', verticle px, horizontal px, croppedByWordpress)
 add_image_size('smallest', 300, 300, true);
 add_image_size('largest', 800, 800, false);
+
+//customize API
+require_once get_template_directory() . '/customizer.php';
