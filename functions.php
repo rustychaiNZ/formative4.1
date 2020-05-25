@@ -45,16 +45,22 @@ add_theme_support('menus');
 add_theme_support('post-thumbnails');
 add_theme_support('widgets');
 
+// Register nav walker class_alias
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+
+function theme_setup(){
 // Menus
-register_nav_menus(
-	array(
-		// location of menu => What it is called on wordpress customise
-		'top-menu' => 'Top Menu Location',
-		// 'top-menu' => __('Top Menu', 'theme'),
-		'mobile-menu' => 'Mobile Menu Location',
-		'footer-menu' => 'Footer Menu Location'
-	)
-);
+	register_nav_menus(
+		array(
+			// location of menu => What it is called on wordpress customise
+			// 'top-menu' => 'Top Menu Location',
+			'primary' => __('Primary Menu', 'smokeFreeTheme'),
+			// 'top-menu' => __('Top Menu', 'theme'),
+			'mobile-menu' => 'Mobile Menu Location',
+			'footer-menu' => 'Footer Menu Location'
+		)
+	);
+}
 
 // Register sidebars
 function my_sidebars(){
@@ -76,6 +82,25 @@ add_action('widgets_init', 'my_sidebars');
 // ('nameOfImageSize', verticle px, horizontal px, croppedByWordpress)
 add_image_size('smallest', 300, 300, true);
 add_image_size('largest', 800, 800, false);
+
+// Header image
+register_default_headers( array(
+	'defaultImage' => array(
+		'url' => get_template_directory_uri() . '/images/fillerHeader.jpg',
+		'thumbnail_url' => get_template_directory_uri() . '/images/fillerHeader.jpg',
+		'description' => __('The default image for the custom header.', 'smokeFreeTheme')
+	)
+));
+$customHeaderDefaults = array(
+	'width' => 1920,
+	'height' => 1080,
+	'default-image' => get_template_directory_uri() . '/images/fillerHeader.jpg'
+);
+add_theme_support('custom-header', $customHeaderDefaults);
+
+
+add_action('after_setup_theme', 'theme_setup');
+
 
 //customize API
 require_once get_template_directory() . '/customizer.php';

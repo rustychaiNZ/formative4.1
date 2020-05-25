@@ -1,10 +1,3 @@
-body{
-	min-height: 100vh;
-	padding: 0;
-}
-footer{
-	z-index: -1;
-}
 h2{
 	font-size: 3.5em;
 	font-weight: 100;
@@ -23,7 +16,15 @@ hr{
 .btn{
 	width: fit-content;
 }
-
+.header-image{
+	width: 100vw;
+	height: 45vh;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .tagline{
 	font-size: 1.1em;
 }
@@ -33,49 +34,27 @@ hr{
 
 /*Top Menu*/
 .top-bar{
-	/*background-color: #18393d;*/
-	box-shadow: 2px 2px 5px grey;
-	height: 50px;
-	padding: 0 45px;
+	/*box-shadow: 2px 2px 5px grey;*/
+	/*height: 50px;*/
+	/*padding: 0 45px;*/
 	position: sticky;
-	top: 0;
-	z-index: 100;
-}
-.top-bar ul, .top-bar li{
-	display: inline;	
+	/*top: 0;*/
+	/*z-index: 100;*/
 }
 .top-bar a{
-	/*color: white;*/
-	line-height: 50px;
-	padding: 10px;
-	text-decoration: none;
-}
-.top-bar a:hover{
-	/*background: ;*/
-	/*color: #a72a02;*/
-}
-.sub-menu a{
-	display: block;
-	line-height: 40px;
-	width: 250px;
+	/*line-height: 50px;*/
+	padding-left: 10px;
+	padding-right: 10px;
+	/*text-decoration: none;*/
 }
 .top-bar ul li{
-	position: relative;
-	float: left;
+	/*position: relative;*/
 }
-.top-bar .sub-menu{
-	background-color: #18393d;
-	box-shadow: 2px 2px 5px grey;
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	top: -999999px;
+.dropdown-menu a{
+	line-height: 50px;
 }
-.top-bar ul li:hover .sub-menu{
-	opacity: 1;
-	padding: 0;
-	position: absolute;
-	top: 100%;
+.dropdown-item:hover{
+	background-color: inherit;
 }
 
 .current-menu-item a{

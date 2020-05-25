@@ -26,6 +26,21 @@ function mytheme_customize_register( $wp_customize ){
 		'settings' => 'footer_navHeading',
 	)));
 
+	// Featured homepage image
+	// $wp_customize->add_section('banner_image', array(
+		// 'title' => __('Front-Page Header Image', 'smokeFreeTheme'),
+		// 'priority' => 30,
+	// ));
+	$wp_customize->add_setting('banner_imageSetting', array(
+		'default' => '',
+		'transport' => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'banner_imageControl', array(
+		'label' => __('Front page banner image', 'smokeFreeTheme'),
+		'section' => 'banner_image',
+		'settings' => 'banner_imageSetting',
+	)));
+
 	// Copyright holder
 	$wp_customize->add_setting('footer_copyrightContainer', array(
 		'default' => '© 2010 Nurses for Smokefree Aotearoa. All rights reserved.',
@@ -124,6 +139,9 @@ function mytheme_customize_css(){
 	}
 	/* --- Top bar controls --- */
 	.top-bar{
+		background-color: <?php echo get_theme_mod('topNav_backgroundColor', '#18393d'); ?>!important;
+	}
+	.dropdown-menu{
 		background-color: <?php echo get_theme_mod('topNav_backgroundColor', '#18393d'); ?>!important;
 	}
 	.top-bar a{
