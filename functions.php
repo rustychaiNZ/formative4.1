@@ -86,21 +86,33 @@ add_image_size('largest', 800, 800, false);
 // Header image
 register_default_headers( array(
 	'defaultImage' => array(
-		'url' => get_template_directory_uri() . '/images/fillerHeader.jpg',
-		'thumbnail_url' => get_template_directory_uri() . '/images/fillerHeader.jpg',
+		'url' => get_template_directory_uri() . '/images/fillerHeader.png',
+		'thumbnail_url' => get_template_directory_uri() . '/images/fillerHeader.png',
 		'description' => __('The default image for the custom header.', 'smokeFreeTheme')
 	)
 ));
 $customHeaderDefaults = array(
 	'width' => 1920,
 	'height' => 1080,
-	'default-image' => get_template_directory_uri() . '/images/fillerHeader.jpg'
+	'default-image' => get_template_directory_uri() . '/images/fillerHeader.png'
 );
 add_theme_support('custom-header', $customHeaderDefaults);
 
 
 add_action('after_setup_theme', 'theme_setup');
 
+// Custom logo
+function smokeFreeTheme_custom_logo(){
+	$defaults = array(
+		'height'      => 100,
+		'width'       => 400,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	);
+	add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'smokeFreeTheme_custom_logo' );
 
 //customize API
 require_once get_template_directory() . '/customizer.php';

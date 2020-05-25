@@ -1,5 +1,5 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<div class="col-4 d-flex">
+	<div class="col-lg-4 col-md-6 d-flex">
 		<div class="card align-self-center mb-4">
 			<!-- Image of Card -->
 			<?php if(has_post_thumbnail()): ?>

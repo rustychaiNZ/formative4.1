@@ -100,6 +100,18 @@ function mytheme_customize_register( $wp_customize ){
 		'settings' => 'topNav_linkColorActive',
 	)));
 
+	// link colour
+	$wp_customize->add_setting('general_linkColor', array(
+		'default' => '#d62655',
+		'transport' => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'general_linkColorControl', array(
+		'label' => __('Link colour', 'smokeFreeTheme'),
+		'description' => 'Changes the colour of links on the page',
+		'section' => 'colors',
+		'settings' => 'general_linkColor',
+	)));
+
 	// Footer background colour controls
 	$wp_customize->add_setting('footer_backgroundColor', array(
 		'default' => '#333',
@@ -145,13 +157,17 @@ function mytheme_customize_css(){
 		background-color: <?php echo get_theme_mod('topNav_backgroundColor', '#18393d'); ?>!important;
 	}
 	.top-bar a{
-		color: <?php echo get_theme_mod('topNav_linkColor', '#ffffff') ?>;
+		color: <?php echo get_theme_mod('topNav_linkColor', '#ffffff') ?>!important;
 	}
 	.top-bar a:hover{
 		color: <?php echo get_theme_mod('topNav_linkColorHover', '#a72a02') ?> !important;
 	}
 	.current-menu-item a{
 		color: <?php echo get_theme_mod('topNav_linkColorActive', 'black') ?> !important;
+	}
+
+	a{
+		color: <?php echo get_theme_mod('general_linkColor', '#d62655') ?>;
 	}
 </style>
 <?php

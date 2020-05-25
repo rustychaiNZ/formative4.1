@@ -3,9 +3,18 @@ h2{
 	font-weight: 100;
 	text-align: center;
 }
+h3{
+	font-weight: 400;
+}
+h4{
+	font-weight: 400;
+}
 hr{
 	border-width: 2px;
 	border-color: #333333;
+}
+a:hover{
+	cursor: pointer;
 }
 .card > p,h1,h2,h3,h4,h5{
 	color: black;
@@ -18,18 +27,49 @@ hr{
 }
 .header-image{
 	width: 100vw;
-	height: 45vh;
+	height: 23vh;
 	background-position: center;
 	background-size: cover;
-	display: flex;
+	/*display: flex;*/
 	justify-content: center;
+	position: relative;
 	align-items: center;
+}
+.header-image-home{
+	align-items: center;
+	background-position: center;
+	background-size: cover;
+	height: 60vh !important;
+	/*display: flex;*/
+	justify-content: center;
+	position: relative;
+	width: 100vw;
 }
 .tagline{
 	font-size: 1.1em;
 }
 .jumbotron{
 	border-radius: 0;
+}
+.custom-logo{
+	display: block !important;
+	float: right !important;
+	height: auto;
+	width: 20vw;
+}
+.custom-logo-container{
+	bottom: 25px;
+	right: 25px;
+	position: absolute;
+}
+.wp-block-columns{
+	align-items: center;
+	display: flex;
+	margin-top: 25px;
+}
+.img-border img{
+	border: 3px solid black;
+	border-radius: 5px;
 }
 
 /*Top Menu*/
@@ -39,7 +79,7 @@ hr{
 	/*padding: 0 45px;*/
 	position: sticky;
 	/*top: 0;*/
-	/*z-index: 100;*/
+	z-index: 100;
 }
 .top-bar a{
 	/*line-height: 50px;*/
@@ -49,6 +89,9 @@ hr{
 }
 .top-bar ul li{
 	/*position: relative;*/
+}
+.dropdown-menu{
+	border: 0;
 }
 .dropdown-menu a{
 	line-height: 50px;
@@ -104,7 +147,36 @@ hr{
 	background: rgb(46,122,133);
 	background: linear-gradient(36deg, rgba(46,122,133,1) 23%, rgba(52,164,180,1) 76%, rgba(132,228,82,1) 100%);
 }
-/*.gradient-footer{*/
-	/*background: rgb(24,57,61);*/
-	/*background: linear-gradient(234deg, rgba(24,57,61,1) 23%, rgba(37,86,93,1) 67%, rgba(68,140,30,1) 100%);*/
-/*}*/
+
+/* - Large window - */
+@media only screen and (max-width: 1200px){
+ .header-image-home{
+ 	height: 50vh !important;
+ }
+}
+/* - Small window - */
+@media only screen and (max-width: 992px){
+	.header-image-home{
+		height: 40vh !important;
+	}
+}
+
+/* - Tablet - */
+@media only screen and (max-width: 768px){
+	.header-image-home{
+		height: 25vh !important;
+	}
+}
+
+/* - Smart phone - */
+@media only screen and (max-width: 576px){
+	h2{
+		font-size: 2.5em;
+	}
+	h3{
+		font-size: 1.5em;
+	}
+	.header-image-home{
+		height: 25vh !important;
+	}
+}
