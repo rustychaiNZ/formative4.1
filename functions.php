@@ -53,11 +53,10 @@ function theme_setup(){
 	register_nav_menus(
 		array(
 			// location of menu => What it is called on wordpress customise
-			// 'top-menu' => 'Top Menu Location',
 			'primary' => __('Primary Menu', 'smokeFreeTheme'),
-			// 'top-menu' => __('Top Menu', 'theme'),
 			'mobile-menu' => 'Mobile Menu Location',
-			'footer-menu' => 'Footer Menu Location'
+			'footer-menu' => 'Footer Menu Location',
+			'social-menu' => 'Social media menu controls'
 		)
 	);
 }

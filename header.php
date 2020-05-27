@@ -15,12 +15,6 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="header-image" style="background-image:url(<?php echo get_header_image(); ?>);">
-						<!-- <div class="row"> -->
-							<!-- <div class="col bg-light rounded-pill shadow"> -->
-								<!-- <h1 class="display-2 text-center"><?php //bloginfo(); ?></h1> -->
-								<!-- <p class="text-dark text-center tagline"><?php// bloginfo( 'description' ); ?></p>	 -->
-							<!-- </div> -->
-						<!-- </div> -->
 					</div>
 				</div>
 			</div>

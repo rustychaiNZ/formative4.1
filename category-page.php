@@ -9,6 +9,7 @@ Template Name: Shop
 <div class="container pt-3">
 	<div class="row">
 		<div class="col-xl-3 widget">
+			<h4>Search Options</h4>
 			<?php if(is_active_sidebar('store-sidebar')) :?>
 			<?php dynamic_sidebar('store-sidebar'); ?>
 			<?php endif; ?>

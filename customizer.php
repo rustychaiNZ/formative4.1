@@ -27,10 +27,6 @@ function mytheme_customize_register( $wp_customize ){
 	)));
 
 	// Featured homepage image
-	// $wp_customize->add_section('banner_image', array(
-		// 'title' => __('Front-Page Header Image', 'smokeFreeTheme'),
-		// 'priority' => 30,
-	// ));
 	$wp_customize->add_setting('banner_imageSetting', array(
 		'default' => '',
 		'transport' => 'refresh',
@@ -39,6 +35,18 @@ function mytheme_customize_register( $wp_customize ){
 		'label' => __('Front page banner image', 'smokeFreeTheme'),
 		'section' => 'banner_image',
 		'settings' => 'banner_imageSetting',
+	)));
+
+	// Social media title
+	$wp_customize->add_setting('footer_socialMediaContainer', array(
+		'default' => 'Check Us Out On',
+		'transport' => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'footer_socialMediaContainerControl', array(
+		'lable' => __('Social media links title', 'smokeFreeTheme'),
+		'description' => 'Contorls the heading for the social media area of the footer',
+		'section' => 'footer_section',
+		'settings' => 'footer_socialMediaContainer'
 	)));
 
 	// Copyright holder
@@ -112,6 +120,7 @@ function mytheme_customize_register( $wp_customize ){
 		'settings' => 'general_linkColor',
 	)));
 
+	// --- Footer controls --- //
 	// Footer background colour controls
 	$wp_customize->add_setting('footer_backgroundColor', array(
 		'default' => '#333',
@@ -122,6 +131,17 @@ function mytheme_customize_register( $wp_customize ){
 		'description' => 'Change the background colour of the footer',
 		'section' => 'colors',
 		'settings' => 'footer_backgroundColor',
+	)));
+	// Footer title colour controls
+	$wp_customize->add_setting('footer_headingColor', array(
+		'default' => '#ffffff',
+		'transport' => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_headingColorControl', array(
+		'label' => __('Footer heading colour', 'smokeFreeTheme'),
+		'description' => 'Change the heading colour of the footer headings',
+		'section' => 'colors',
+		'settings' => 'footer_headingColor',
 	)));
 	// Footer Nav link colour controls
 	$wp_customize->add_setting('footer_navLinkColor', array(
@@ -134,6 +154,17 @@ function mytheme_customize_register( $wp_customize ){
 		'section' => 'colors',
 		'settings' => 'footer_navLinkColor',
 	)));
+	// Social media icon colour controls
+	$wp_customize->add_setting('footer_socialMediaLinkColor', array(
+		'default' => '#d62655',
+		'transport' => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_socialMediaLinkColorControl', array(
+		'label' => __('Social media links colours', 'smokeFreeTheme'),
+		'description' => 'Changes the colour of the links for the sites social media links',
+		'section' => 'colors',
+		'settings' => 'footer_socialMediaLinkColor',
+	)));
 	// --- Colour control ends --- //
 }
 add_action('customize_register', 'mytheme_customize_register');
@@ -142,12 +173,23 @@ add_action('customize_register', 'mytheme_customize_register');
 function mytheme_customize_css(){
 ?>
 <style type="text/css">
+	/* --- Universal controls --- */
+	a{
+		color: <?php echo get_theme_mod('general_linkColor', '#d62655') ?>;
+	}
 	/* --- Footer controls --- */
+	.footer-heading-color{
+		color: <?php echo get_theme_mod('footer_headingColor', '#ffffff') ?>;
+	}
 	.gradient-footer{
 		background-color: <?php echo get_theme_mod('footer_backgroundColor', '#333'); ?>!important;
 	}
 	.bottom-list .menu-item a{
 		color: <?php echo get_theme_mod('footer_navLinkColor', '#d62655'); ?>!important;
+	}
+	/* Social media links */
+	.social-list a{
+		color: <?php echo get_theme_mod('footer_socialMediaLinkColor', '#d62655') ?> !important;
 	}
 	/* --- Top bar controls --- */
 	.top-bar{
@@ -164,10 +206,6 @@ function mytheme_customize_css(){
 	}
 	.current-menu-item a{
 		color: <?php echo get_theme_mod('topNav_linkColorActive', 'black') ?> !important;
-	}
-
-	a{
-		color: <?php echo get_theme_mod('general_linkColor', '#d62655') ?>;
 	}
 </style>
 <?php

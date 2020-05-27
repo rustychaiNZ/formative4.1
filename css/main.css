@@ -133,6 +133,22 @@ a:hover{
 }
 /*End of footer menu*/
 
+/*Social links menu*/
+.social-list ul{
+	list-style: none;
+}
+.social-list li{
+	display: inline;
+	font-size: 4em;
+}
+.social-list a{
+	padding: 10px;
+}
+.social-list a:hover{
+	cursor: pointer;
+}
+/*social links menu ends*/
+
 /*Sidebar Menu*/
 .widget ul{
 	padding: 5px 0;
