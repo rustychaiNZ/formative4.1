@@ -25,20 +25,8 @@ function mytheme_customize_register( $wp_customize ){
 		'section' => 'footer_section',
 		'settings' => 'footer_navHeading',
 	)));
-
-	// Featured homepage image
-	$wp_customize->add_setting('banner_imageSetting', array(
-		'default' => '',
-		'transport' => 'refresh',
-	));
-	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'banner_imageControl', array(
-		'label' => __('Front page banner image', 'smokeFreeTheme'),
-		'section' => 'banner_image',
-		'settings' => 'banner_imageSetting',
-	)));
-
 	// Social media title
-	$wp_customize->add_setting('footer_socialMediaContainer', array(
+	$wp_customize->add_setting('footer_socialMedia', array(
 		'default' => 'Check Us Out On',
 		'transport' => 'refresh',
 	));
@@ -46,9 +34,8 @@ function mytheme_customize_register( $wp_customize ){
 		'lable' => __('Social media links title', 'smokeFreeTheme'),
 		'description' => 'Contorls the heading for the social media area of the footer',
 		'section' => 'footer_section',
-		'settings' => 'footer_socialMediaContainer'
+		'settings' => 'footer_socialMedia'
 	)));
-
 	// Copyright holder
 	$wp_customize->add_setting('footer_copyrightContainer', array(
 		'default' => '© 2010 Nurses for Smokefree Aotearoa. All rights reserved.',
@@ -59,6 +46,18 @@ function mytheme_customize_register( $wp_customize ){
 		'description' => 'Controls footer copyright container',
 		'section' => 'footer_section',
 		'settings' => 'footer_copyrightContainer',
+	)));
+
+
+	// Featured homepage image
+	$wp_customize->add_setting('banner_imageSetting', array(
+		'default' => '',
+		'transport' => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'banner_imageControl', array(
+		'label' => __('Front page banner image', 'smokeFreeTheme'),
+		'section' => 'banner_image',
+		'settings' => 'banner_imageSetting',
 	)));
 	// --- Content controller end --- //
 
@@ -120,7 +119,41 @@ function mytheme_customize_register( $wp_customize ){
 		'settings' => 'general_linkColor',
 	)));
 
-	// --- Footer controls --- //
+	// Table colour
+	$wp_customize->add_setting('table_backgroundColor', array(
+		'default' => '#ededed',
+		'transport' => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'table_backgroundColorControl', array(
+		'label' => __('Table colour', 'smokeFreeTheme'),
+		'description' => 'Changes colour of the tables background',
+		'section' => 'colors',
+		'settings' => 'table_backgroundColor'
+	)));
+	// Table header colour
+	$wp_customize->add_setting('table_headerColor', array(
+		'default' => '#1f1f1f',
+		'transport' => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'table_headerColorControl', array(
+		'label' => __('Table background header colour', 'smokeFreeTheme'),
+		'description' => 'Changes colour of the tables header background',
+		'section' => 'colors',
+		'settings' => 'table_headerColor'
+	)));
+	// Table stripe colour
+	$wp_customize->add_setting('table_stripeColor', array(
+		'default' => '#808080',
+		'transport' => 'refresh',
+	));
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'table_stripeColorControl', array(
+		'label' => __('Table background stripe colour', 'smokeFreeTheme'),
+		'description' => 'Changes colour of the tables stripe background',
+		'section' => 'colors',
+		'settings' => 'table_stripeColor'
+	)));
+
+	// - Footer colour controls -
 	// Footer background colour controls
 	$wp_customize->add_setting('footer_backgroundColor', array(
 		'default' => '#333',
@@ -206,6 +239,16 @@ function mytheme_customize_css(){
 	}
 	.current-menu-item a{
 		color: <?php echo get_theme_mod('topNav_linkColorActive', 'black') ?> !important;
+	}
+	/* --- Table Colours ---*/
+	table{
+		background-color: <?php echo get_theme_mod('table_backgroundColor', '#ededed') ?>;
+	}
+	table th{
+		background-color: <?php echo get_theme_mod('table_headerColor', '#1f1f1f') ?>;
+	}
+	table tr:nth-child(even){
+		background-color: <?php echo get_theme_mod('table_stripeColor', '#808080') ?>;
 	}
 </style>
 <?php

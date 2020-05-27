@@ -1,7 +1,7 @@
 	<footer class="jumbotron footer gradient-footer mb-0">
 		<div class="row d-flex align-items-center">
 			<!-- Contains navagation to blog entries -->
-			<div class="col-md">
+			<div class="col-sm">
 				<h4 class="footer-heading-color"><?php echo get_theme_mod('footer_navHeading'); ?></h4>
 				<?php 
 					wp_nav_menu(
@@ -13,8 +13,8 @@
 				?>
 			</div>
 			<!-- Contains social media icons with links -->
-			<div class="col-md text-right">
-				<h4 class="footer-heading-color"><?php echo get_theme_mod('footer_socialMediaContainer'); ?></h4>
+			<div class="col-sm right-sm-center">
+				<h4 class="footer-heading-color"><?php echo get_theme_mod('footer_socialMedia'); ?></h4>
 				<?php 
 					wp_nav_menu(
 						array(

@@ -16,6 +16,24 @@ hr{
 a:hover{
 	cursor: pointer;
 }
+
+/*Table*/
+table {
+	width: auto !important;
+	text-align: left;
+	border-collapse: collapse;
+}
+th{
+	color: #f6f6f6;
+}
+table td, table th {
+	padding: 12px 12px;
+}
+table tbody td {
+	font-size: 1.1em;
+}
+/*Table*/
+
 .card > p,h1,h2,h3,h4,h5{
 	color: black;
 }
@@ -55,6 +73,7 @@ a:hover{
 	display: block !important;
 	float: right !important;
 	height: auto;
+	max-width: 250px;
 	width: 20vw;
 }
 .custom-logo-container{
@@ -74,21 +93,13 @@ a:hover{
 
 /*Top Menu*/
 .top-bar{
-	/*box-shadow: 2px 2px 5px grey;*/
-	/*height: 50px;*/
-	/*padding: 0 45px;*/
 	position: sticky;
-	/*top: 0;*/
+	top: 0;
 	z-index: 100;
 }
 .top-bar a{
-	/*line-height: 50px;*/
 	padding-left: 10px;
 	padding-right: 10px;
-	/*text-decoration: none;*/
-}
-.top-bar ul li{
-	/*position: relative;*/
 }
 .dropdown-menu{
 	border: 0;
@@ -123,7 +134,6 @@ a:hover{
 	list-style: none;
 }
 .bottom-list .menu-item a{
-	/*color: #850514;*/
 	font-size: 1.2em;
 	text-decoration: underline;
 	width: auto;
@@ -147,6 +157,9 @@ a:hover{
 .social-list a:hover{
 	cursor: pointer;
 }
+.right-sm-center{
+ 	text-align: right;
+ }
 /*social links menu ends*/
 
 /*Sidebar Menu*/
@@ -191,6 +204,12 @@ a:hover{
 	}
 	h3{
 		font-size: 1.5em;
+	}
+	.right-sm-center{
+		text-align: center !important;
+	}
+	.social-list ul{
+		padding: 0;
 	}
 	.header-image-home{
 		height: 25vh !important;
